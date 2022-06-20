@@ -1,0 +1,1 @@
+<script  src="/public/js/game.js" type="module" ></script>
