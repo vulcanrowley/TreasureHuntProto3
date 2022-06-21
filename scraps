@@ -10,4 +10,11 @@
           });
         });
       };
+
+  [
+        { index: 13, weight: 1 },
+        { index: 32, weight: 1 },
+        { index: 51, weight: 1 },
+  ],
+
       
