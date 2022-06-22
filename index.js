@@ -26,7 +26,7 @@
  //app.set("views", path.join(__dirname, "views"));// might not be needed
  app.set("view engine", "pug");
  //set static file lookup to views directory
- app.use(express.static(path.join(__dirname, 'views')));//'public')));
+ app.use(express.static(path.join(__dirname, '/views/')));//'public')));
 
  /**
   * Phaser specific setup
@@ -42,9 +42,19 @@
   })
 
 /**
- * Server Activation
+ * Game Server side socket io
  */
 
+ io.on('connection', function (socket) {
+  console.log('a user connected');
+  socket.on('disconnect', function () {
+    console.log('user disconnected');
+  });
+});
+
+/**
+ * Server Activation
+ */
 
  app.listen(port, () => {
     console.log(`Listening to requests on http://localhost:${port}`);
