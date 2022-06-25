@@ -1,5 +1,5 @@
 
-import Dungeon from "../scenes/Dungeon.js";
+import DungeonScene from "../scenes/DungeonScene.js";
 import Game from "../scenes/Game.js";
 
 var config = {
@@ -14,11 +14,16 @@ var config = {
       gravity: { y: 0 },
     },
   },
-  scene: [Game],
+  scene: [DungeonScene],
 };
 
 var game = new Phaser.Game(config);
-//scene.start('Dungeon',{data})
+//
+// set active to false in config
+// dont set scene in config
+// add scene using key from scene modulle
+////game.scene.add('DungeonScene', DungeonScene);
+////game.scene.start('DungeonScene',{seed: sceneSeed})
 /*
 {
     preload: preload,

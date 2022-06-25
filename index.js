@@ -25,8 +25,8 @@
 
  //app.set("views", path.join(__dirname, "views"));// might not be needed
  app.set("view engine", "pug");
- //set static file lookup to views directory
- app.use(express.static(path.join(__dirname, '/views/')));//'public')));
+ //set static file lookup to views directory  NO NO 
+ app.use(express.static(path.join(__dirname, 'public')));
 
  /**
   * Phaser specific setup
@@ -37,9 +37,13 @@
 /**
  * Routes Definitions
  */
- app.get('/', (req, res) => {
-    res.render('index', { SceneCode: verificationCode})
-  })
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+ //app.get('/', (req, res) => {
+ //   res.render('index', { SceneCode: verificationCode})
+ // })
 
 /**
  * Game Server side socket io
